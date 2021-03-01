@@ -12,7 +12,6 @@ export const displayCity = () => {
 
 const addCityName = (e) => {
   if (e.target.classList.contains('dropdown-item')) {
-    // body.style.backgroundImage = 'url("../../dist/img/bg-backpack-opac.png")';
     let cityName = e.target.textContent;
     root.innerHTML = '';
 
@@ -39,8 +38,8 @@ const displayCityInfo = (cityID) => {
             </div>
             <h4>Antal invånare: ${population}</h4>
             <div class="form-check form-switch mt-3">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Besökt</label>
+            <input class="form-check-input" type="checkbox" id="switch${city.id}">
+            <label class="form-check-label" for="switch${city.id}">Besökt</label>
           </div>
             <p class="card-text" id="info"></p>`
         );

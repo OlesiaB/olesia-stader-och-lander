@@ -1,5 +1,5 @@
 export const addCityToLS = (cityID) => {
-  const buttonToggle = document.getElementById('flexSwitchCheckDefault');
+  const buttonToggle = document.getElementById(`switch${cityID}`);
   buttonToggle.addEventListener('change', () => {
     // Check if there are any cities saved in LS
     let visitedCities = JSON.parse(localStorage.getItem('visitedCities'));
@@ -20,7 +20,7 @@ export const toggleVisitedCity = (cityID) => {
   } else {
     let visitedCities = JSON.parse(localStorage.getItem('visitedCities'));
     if (visitedCities.includes(cityID)) {
-      const buttonToggle = document.getElementById('flexSwitchCheckDefault');
+      const buttonToggle = document.getElementById(`switch${cityID}`);
       buttonToggle.checked = true;
     }
   }
