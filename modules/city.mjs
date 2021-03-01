@@ -23,7 +23,7 @@ const addCityName = (e) => {
   }
 };
 
-const displayCityInfo = (cityID) => {
+export const displayCityInfo = (cityID) => {
   getData().then((data) => {
     data[1].forEach((city) => {
       if (cityID == city.id) {

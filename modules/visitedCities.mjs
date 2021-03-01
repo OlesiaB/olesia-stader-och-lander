@@ -1,5 +1,6 @@
 import { getData, getImg } from './fetch.mjs';
 import { toggleVisitedCity, addCityToLS } from './localStorage.mjs';
+import { displayCityInfo } from './city.mjs';
 
 const visitedCitiesBtn = document.getElementById('visited-cities');
 const root = document.getElementById('root');
@@ -30,7 +31,7 @@ export const displayVisitedCities = () => {
                   <input class="form-check-input" type="checkbox" id="switch${cityID}">
                   <label class="form-check-label" for="switch${cityID}">Besökt</label>
                 </div>
-                <button class="btn btn-secondary mt-3">Läs mer</button>
+                <button class="btn btn-secondary mt-3" id="btn${cityID}">Läs mer </button>
               </div>
             </div>
           </div>
@@ -39,6 +40,12 @@ export const displayVisitedCities = () => {
           displayImg(cityName);
           toggleVisitedCity(cityID);
           addCityToLS(cityID);
+
+          const btn = document.getElementById(`btn${cityID}`);
+          btn.addEventListener('click', () => {
+            root.innerHTML = '';
+            displayCityInfo(cityID);
+          });
         });
       }
       root.insertAdjacentHTML('beforeend', '</div>');
