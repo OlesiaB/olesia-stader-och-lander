@@ -1,0 +1,44 @@
+// Change Bootstrap's primary and secondary colors to custom ones
+$primary: #e5c65f;
+$secondary: #bab3b3;
+
+body {
+  background-image: url('../../dist/img/bg-backpack.jpg');
+  background-size: cover;
+}
+
+#country-menu {
+  margin-right: 5rem;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-img-top {
+  border-radius: 12px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 100px;
+  color: $secondary;
+}
+
+#clearBtn {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+#sumvisited {
+  margin-left: 100px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather span {
+  font-size: 1.5rem;
+}
