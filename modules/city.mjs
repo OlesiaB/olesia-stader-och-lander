@@ -64,7 +64,7 @@ export const displayCityInfo = (cityID) => {
   });
 };
 
-const displayImg = (city) => {
+export const displayImg = (city) => {
   getImg(city).then((data) => {
     console.log('Unsplash API', data);
 

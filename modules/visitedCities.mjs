@@ -1,6 +1,6 @@
 import { getData, getImg } from './fetch.mjs';
 import { toggleVisitedCity, addCityToLS } from './localStorage.mjs';
-import { displayCityInfo } from './city.mjs';
+import { displayCityInfo, displayImg } from './city.mjs';
 
 const visitedCitiesBtn = document.getElementById('visited-cities');
 const root = document.getElementById('root');
@@ -37,7 +37,7 @@ export const displayVisitedCities = () => {
           </div>
           `
           );
-          displayImg(cityName);
+          displayCardImg(cityName);
           toggleVisitedCity(cityID);
           addCityToLS(cityID);
 
@@ -45,6 +45,7 @@ export const displayVisitedCities = () => {
           btn.addEventListener('click', () => {
             root.innerHTML = '';
             displayCityInfo(cityID);
+            displayImg(cityName);
           });
         });
       }
@@ -53,7 +54,7 @@ export const displayVisitedCities = () => {
   });
 };
 
-const displayImg = (cityName) => {
+const displayCardImg = (cityName) => {
   let img = document.getElementById(cityName);
   getImg(cityName).then((data) => {
     img.src = data.urls.regular;
