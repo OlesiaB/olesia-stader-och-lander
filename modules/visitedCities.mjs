@@ -1,6 +1,7 @@
 import { getData, getImg } from './fetch.mjs';
 import { toggleVisitedCity, addCityToLS } from './localStorage.mjs';
 import { displayCityInfo, displayImg } from './city.mjs';
+import { displayWeather } from './weather.mjs';
 
 const visitedCitiesBtn = document.getElementById('visited-cities');
 const root = document.getElementById('root');
@@ -26,8 +27,10 @@ export const displayVisitedCities = () => {
             <div class="card mb-3">
               <img class="card-img-top" id="${cityName}">
               <div class="card-body">
-                <h5 class="card-title">${cityName}</h5>
-                <div class="form-check form-switch mt-3">
+              <div class="title-container">
+                <h5 class="card-title" id="weather${cityName}">${cityName}</h5>
+              </div>
+                <div class="form-check form-switch mt-1">
                   <input class="form-check-input" type="checkbox" id="switch${cityID}">
                   <label class="form-check-label" for="switch${cityID}">Besökt</label>
                 </div>
@@ -40,12 +43,19 @@ export const displayVisitedCities = () => {
           displayCardImg(cityName);
           toggleVisitedCity(cityID);
           addCityToLS(cityID);
+          displayWeather(cityName);
+
+          // const buttonToggle = document.getElementById(`switch${cityID}`);
+          // if ((buttonToggle.checked = false)) {
+          //   console.log('unchecked');
+          // }
 
           const btn = document.getElementById(`btn${cityID}`);
           btn.addEventListener('click', () => {
             root.innerHTML = '';
             displayCityInfo(cityID);
             displayImg(cityName);
+            displayWeather(cityName);
           });
         });
       }

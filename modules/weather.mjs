@@ -2,8 +2,7 @@ import { getWeatherData } from './fetch.mjs';
 
 export const displayWeather = (cityName) => {
   getWeatherData(cityName).then((data) => {
-    console.log('Weather API', data);
-    const h3 = document.querySelector('.card-title');
+    const h3 = document.getElementById(`weather${cityName}`);
     h3.insertAdjacentHTML(
       'afterend',
       `<div class="weather"><img src="http://openweathermap.org/img/w/${

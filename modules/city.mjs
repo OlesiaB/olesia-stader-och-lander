@@ -34,7 +34,7 @@ export const displayCityInfo = (cityID) => {
           `<div class="card w-50 m-5 p-3">
           <div class="card-body">
             <div class="title-container">
-            <h3 class="card-title" id=${city.id}>${cityName}</h3>
+            <h3 class="card-title" id="weather${cityName}">${cityName}</h3>
             </div>
             <h4>Antal invånare: ${population}</h4>
             <div class="form-check form-switch mt-3">
@@ -72,6 +72,6 @@ export const displayImg = (city) => {
     body.style.backgroundSize = 'cover';
     body.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
     body.style.backgroundBlendMode = 'multiply';
-    body.style.height = '100vh';
+    body.style.minHeight = '100vh';
   });
 };
