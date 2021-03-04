@@ -1,4 +1,4 @@
-export const addCityToLS = (cityID) => {
+export const addCityToLS = (cityID, removeCard = false) => {
   const buttonToggle = document.getElementById(`switch${cityID}`);
   buttonToggle.addEventListener('change', () => {
     // Check if there are any cities saved in LS
@@ -10,6 +10,13 @@ export const addCityToLS = (cityID) => {
       let cityToDelete = visitedCities.indexOf(cityID);
       visitedCities.splice(cityToDelete, 1);
       localStorage.setItem('visitedCities', JSON.stringify(visitedCities));
+
+      if (removeCard == true) {
+        const card = document.getElementById(`card${cityID}`);
+        const flexContainer = card.parentNode.parentNode;
+        card.remove();
+        flexContainer.refresh();
+      }
     }
   });
 };

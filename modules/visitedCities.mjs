@@ -24,7 +24,7 @@ export const displayVisitedCities = () => {
             'beforeend',
             `
           <div class="col-sm-3">
-            <div class="card mb-3">
+            <div class="card mb-3" id="card${cityID}">
               <img class="card-img-top" id="${cityName}">
               <div class="card-body">
               <div class="title-container">
@@ -42,13 +42,8 @@ export const displayVisitedCities = () => {
           );
           displayCardImg(cityName);
           toggleVisitedCity(cityID);
-          addCityToLS(cityID);
+          addCityToLS(cityID, true);
           displayWeather(cityName);
-
-          // const buttonToggle = document.getElementById(`switch${cityID}`);
-          // if ((buttonToggle.checked = false)) {
-          //   console.log('unchecked');
-          // }
 
           const btn = document.getElementById(`btn${cityID}`);
           btn.addEventListener('click', () => {

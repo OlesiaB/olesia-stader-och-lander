@@ -31,7 +31,7 @@ export const displayCityInfo = (cityID) => {
         const population = city.population;
         root.insertAdjacentHTML(
           'beforeend',
-          `<div class="card w-50 m-5 p-3">
+          `<div class="card w-50 m-5 p-3" id="card${city.id}">
           <div class="card-body">
             <div class="title-container">
             <h3 class="card-title" id="weather${cityName}">${cityName}</h3>
