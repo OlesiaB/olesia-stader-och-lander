@@ -13,9 +13,7 @@ export const addCityToLS = (cityID, removeCard = false) => {
 
       if (removeCard == true) {
         const card = document.getElementById(`card${cityID}`);
-        const flexContainer = card.parentNode.parentNode;
-        card.remove();
-        flexContainer.refresh();
+        card.parentNode.remove();
       }
     }
   });
