@@ -14,7 +14,8 @@ export const addCityToLS = (cityID, removeCard = false) => {
       if (removeCard == true) {
         const card = document.getElementById(`card${cityID}`);
         const flexContainer = card.parentNode.parentNode;
-        card.remove();
+        //small fix to remove entire parentNode
+        card.parentNode.remove();
         flexContainer.refresh();
       }
     }
